@@ -54,88 +54,76 @@ body {
     position: absolute;
     top: 333px; /* Below home-bg */
     width: 100%;
-    height: 515px; /* Full height minus top and nav bar */
+    height: calc(100% - 333px - 100px);
     background-color: #FFF;
     border-radius: 40px 40px 0 0;
     box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.10);
     z-index: 2;
     overflow-y: auto;
-    padding-top: 120px; /* Space for search and filters */
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
 }
 
-/* Search Bar */
-.search-bar {
-    position: absolute;
-    top: 20px;
-    left: 16px;
-    width: calc(100% - 32px);
-    height: 55px;
-    background-color: white;
-    border-radius: 22px;
-    border: 0.93px solid #D1D2D6;
+/* Popular places */
+/* Popular Places Section */
+.popular {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    z-index: 3;
-}
-
-.search-input {
-    border: none;
-    outline: none;
-    width: 80%;
-    font-size: 19px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.filter-button {
-    width: 24px; 
-    height: 24px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
+    width: 343px;
+    margin: 20px 0 0 16px;
     padding: 0;
 }
 
-/* Filters */
-.filters {
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    overflow-x: auto;
-    padding: 10px 16px;
-    background-color: white;
-    z-index: 3;
+.popular h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #484848;
+    margin: 0; /* Remove default h2 margin */
 }
 
-.filter-chip {
-    font-family: 'Roboto', sans-serif;
-    padding: 8px 12px;
-    margin-right: 8px;
-    background-color: #5BB26E;
-    border-radius: 8px;
+.view {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Space between button and icon */
+}
+
+.view button {
+    color: #074535;
+    font-family: 'Quicksand', sans-serif;
     font-size: 14px;
-    white-space: nowrap;
-    color: #fff;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0; /* Remove default button margins */
+}
+
+.view-all {
+    width: 18px;
+    height: 18px;
+    background-image: url('/images/view-all.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Park Cards List */
 .park-list {
-    padding: 0 16px 20px;
+    padding: 0 16px 50px 20px;
+    
 }
 
 .park-card {
     width: 100%;
     height: 341px;
     background-color: #F5F6F0;
-    border-radius: 20px;
+    border-radius: 30px;
     overflow: hidden;
-    margin-bottom: 22px;
+    margin-top: 22px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     position: relative;
     z-index: 2 ;
@@ -147,6 +135,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
+    border-radius: 20px;
     z-index: 3;
 }
 
@@ -156,6 +145,7 @@ body {
     width: 100%;
     height: 81px;
     bottom: 0;
+    border-radius: 20px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 1.79%, rgba(0, 0, 0, 0.80) 95.84%);
 }
 
@@ -164,7 +154,7 @@ body {
     font-weight: 500;
     font-size: 22px;
     position: absolute;
-    bottom: 58px;
+    bottom: 30px;
     left: 18px;
     color: white;
     z-index: 2;
@@ -176,7 +166,7 @@ body {
     font-weight: 400;
     font-size: 14px;
     position: absolute;
-    bottom: 30px;
+    bottom: 12px;
     left: 18px;
     color: rgba(255, 255, 255, 0.6);
     z-index: 2;
@@ -203,45 +193,51 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-weight: 200;
     gap: 5px;
+    letter-spacing: 0.15px;
 }
 
 .camp-icon, .opening1-icon, .opening2-icon {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
+    display: flex;
+    width: 19px;
+    height: 19px;
     background-repeat: no-repeat;
-    margin-right: 4px;
-    vertical-align: middle;
 }
 
 .camp-icon {
     background-image: url('/images/camp.svg');
+    margin-top: 2px;
 }
 
 .opening1-icon {
     background-image: url('/images/opening1.svg');
+    margin-left: 16px;
 }
 
 .opening2-icon {
     background-image: url('/images/opening2.svg');
+    margin-left: 16px;
 }
 
+
 .book-now {
-    width: calc(100% - 36px);
-    margin: 0 18px 18px;
-    padding: 12px;
-    background-color: #4CAF50;
+    margin: 0 0 20px 18px;
+    padding: 10.5px 108.5px;
     color: #fff;
     border: none;
-    border-radius: 8px;
-    font-weight: 600;
+    border-radius: 6px;
+    background: var(--Primary, #074535);
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
     cursor: pointer;
 }
 
 /* Navigation Bar */
 .nav-bar {
     position: absolute;
-    bottom: 23px;
+    bottom: 20px;
     width: 100%;
     height: 80px;
     background-color: #fff;
@@ -275,11 +271,11 @@ body {
 }
 
 .nav-item:nth-child(1)::before {
-    background-image: url('/images/home1.svg');
+    background-image: url('/images/home2.svg');
 }
 
 .nav-item:nth-child(2)::before {
-    background-image: url('/images/explore2.svg');
+    background-image: url('/images/explore1.svg');
 }
 
 .nav-item:nth-child(3)::before {
@@ -298,6 +294,7 @@ body {
 /* Home Bar (bottom indicator) */
 .home-bar {
     position: absolute;
+    margin: 0;
     bottom: 0px;
     width: 100%;
     height: 25px;
