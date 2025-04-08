@@ -259,6 +259,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s ease-in-out; /* Add this line */
+    transform: translateY(0); /* Add this line */
+}
+
+.nav-item:hover {
+    transform: translateY(-3px); /* Add hover effect */
 }
 
 .nav-item::before {
@@ -291,6 +297,7 @@ body {
 .nav-item.active {
     font-weight: 500;
     color: #074535;
+    transform: translateY(-3px); 
 }
 
 /* Home Bar (bottom indicator) */

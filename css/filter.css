@@ -193,7 +193,7 @@ body {
 }
 
 .filter-option:hover {
-    background-color: #E0E0E0;
+    background-color: #f4f4f4;
 }
 
 .filter-option.active {
@@ -225,26 +225,34 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-size: 18px;
     font-weight: 400;
-}
-
-.back-button {
-    background-color: #fff;
-    border: 1px solid #074535;
-    font-weight: 400;
-}
-
-.apply-button {
     background-color: #074535;
     color: white;
     font-weight: 700;
 }
 
-.back-button:hover {
-    background-color: #E0E0E0;
-}
+/* .back-button {
+    background-color: #fff;
+    border: 1px solid #074535;
+    font-weight: 400;
+} */
 
-.apply-button:hover {
-    background-color: #053021;
+/* .apply-button {
+    background-color: #074535;
+    color: white;
+    font-weight: 700;
+} */
+
+/* .back-button:hover {
+    background-color: #074535;
+    color: white;
+    font-weight: 700;
+} */
+
+button:hover {
+    background-color: #fff;
+    border: 1px solid #074535;
+    font-weight: 400;
+    color: #000;
 }
 
 /* Navigation Bar */
@@ -270,8 +278,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; /* Add this line */
+    transform: translateY(0); /* Add this line */
 }
+.nav-item:hover {
+    transform: translateY(-3px); /* Add hover effect */
+}
+
 
 .nav-item::before {
     content: '';
@@ -303,6 +316,7 @@ body {
 .nav-item.active {
     font-weight: 500;
     color: #074535;
+    transform: translateY(-3px); 
 }
 
 /* Home Bar */
