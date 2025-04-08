@@ -54,13 +54,12 @@ body {
     position: absolute;
     top: 62px; /* Below home-bg */
     width: 100%;
-    height: calc(100% - 62px - 100px); /* Full height minus top and nav bar */
+    height: calc(100% - 62px - 48px); /* Full height minus top and nav bar */
     background-color: #FFF;
     border-radius: 40px 40px 0 0;
     box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.10);
     z-index: 2;
     overflow-y: auto;
-    padding-top: 120px; /* Space for search and filters */
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     scrollbar-width: none; /* Firefox */
@@ -104,136 +103,148 @@ body {
     padding: 0;
 }
 
-/* Filters */
-.filters {
+
+/* Filter Container */
+.filter-container {
     position: absolute;
-    top: 90px;
-    left: 0;
+    top: 88.69px;
     width: 100%;
-    display: flex;
-    overflow-x: auto;
-    padding: 10px 16px;
-    background-color: white;
-    z-index: 3;
-    margin: 0;
-}
-
-.filter-chip {
-    font-family: 'Roboto', sans-serif;
-    padding: 8px 12px;
-    margin-right: 8px;
-    background-color: #5BB26E;
-    border-radius: 8px;
-    font-size: 14px;
-    white-space: nowrap;
-    color: #fff;
-}
-
-/* Park Cards List */
-.park-list {
-    padding: 0 16px 20px;
-    margin-top: 35px;
-}
-
-.park-card {
-    width: 100%;
-    height: 280px;
-    background-color: #F5F6F0;
-    border-radius: 20px;
+    height: calc(100% - 44px - 100px);
+    background-color: #FFF;
+    overflow-y: auto;
+    padding: 0 16px;
     overflow: hidden;
-    margin-top: 22px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    position: relative;
-    z-index: 2 ;
-}
-
-.park-image {
-    width: 100%;
-    height: 222px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    border-radius: 20px;
-    z-index: 3;
-}
-
-.park-image::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 81px;
-    bottom: 0;
-    border-radius: 20px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 1.79%, rgba(0, 0, 0, 0.80) 95.84%);
-}
-
-.park-name {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    font-size: 22px;
-    position: absolute;
-    bottom: 30px;
-    left: 18px;
-    color: white;
     z-index: 2;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
-.park-location {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    position: absolute;
-    bottom: 12px;
-    left: 18px;
-    color: rgba(255, 255, 255, 0.6);
-    z-index: 2;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+.filter-header {
+    margin-bottom: 20px;
+}
+
+.filter-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #484848;
+    margin-bottom: 10px;
+}
+
+.filter-actions {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.park-location::before {
-    content: '';
-    display: inline-block;
-    width: 10px;
-    height: 13px;
-    background-image: url('/images/vector.svg');
-    background-repeat: no-repeat;
-    margin-right: 6px;
+.filter-label {
+    color: #000;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
-.park-meta {
-    display: flex;
-    margin: 20px 0 20px 18px;
+.clear-all {
+    background: none;
+    border: none;
+    color: #074535;
+    font-family: 'Quicksand', sans-serif;
     font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-section h2 {
     color: #484848;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 200;
-    gap: 5px;
-    letter-spacing: 0.15px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
-.camp-icon, .opening1-icon, .opening2-icon {
+.filter-options {
     display: flex;
-    width: 19px;
-    height: 19px;
-    background-repeat: no-repeat;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
 }
 
-.camp-icon {
-    background-image: url('/images/camp.svg');
-    margin-top: 2px;
+.filter-option {
+    display: flex;
+    background: none;
+    height: 32px;
+    padding: 7px 12px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    border: 1px solid #E1E2E6;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #484848;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
 }
 
-.opening1-icon {
-    background-image: url('/images/opening1.svg');
-    margin-left: 16px;
+.filter-option:hover {
+    background-color: #E0E0E0;
 }
 
-.opening2-icon {
-    background-image: url('/images/opening2.svg');
-    margin-left: 16px;
+.filter-option.active {
+    background-color: #074535;
+    color: white;
+    border-color: #074535;
+}
+
+.filter-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 30.31px 0 0 0;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+}
+
+.back-button, .apply-button {
+    display: flex;
+    width: 162px;
+    height: 44px;
+    padding: 16px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.back-button {
+    background-color: #fff;
+    border: 1px solid #074535;
+    font-weight: 400;
+}
+
+.apply-button {
+    background-color: #074535;
+    color: white;
+    font-weight: 700;
+}
+
+.back-button:hover {
+    background-color: #E0E0E0;
+}
+
+.apply-button:hover {
+    background-color: #053021;
 }
 
 /* Navigation Bar */
@@ -259,6 +270,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-item::before {
@@ -293,7 +305,7 @@ body {
     color: #074535;
 }
 
-/* Home Bar (bottom indicator) */
+/* Home Bar */
 .home-bar {
     position: absolute;
     margin: 0;

@@ -13,9 +13,12 @@
         <div class="explore">
             <div class="search-bar">
                 <input type="text" class="search-input" placeholder="Search" id="park-search">
-                <button class="filter-button" style="background-image: url('images/filter.svg');"></button>
+                <button 
+                    class="filter-button" 
+                    style="background-image: url('images/filter.svg');" 
+                    onclick="document.querySelector('.explore').classList.add('expand'); setTimeout(function(){ window.location.href='filter.html'; }, 500);">
+                </button>
             </div>
-            
             <div class="filters">
                 <div class="filter-chip">Virtual Walk</div>
                 <div class="filter-chip">Photos</div>
