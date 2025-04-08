@@ -214,7 +214,7 @@ body {
     letter-spacing: 0.15px;
 }
 
-.camp-icon, .opening1-icon, .opening2-icon {
+.camp-icon, .opening1-icon, .opening2-icon, .opening3-icon {
     display: flex;
     width: 19px;
     height: 19px;
@@ -233,6 +233,11 @@ body {
 
 .opening2-icon {
     background-image: url('/images/opening2.svg');
+    margin-left: 16px;
+}
+
+.opening3-icon {
+    background-image: url('/images/opening3.svg');
     margin-left: 16px;
 }
 
