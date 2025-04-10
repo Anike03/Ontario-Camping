@@ -60,7 +60,7 @@ body {
     box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.10);
     z-index: 2;
     overflow-y: auto;
-    padding-top: 120px; /* Space for search and filters */
+    padding-top: 100px; /* Space for search and filters */
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     scrollbar-width: none; /* Firefox */
@@ -112,7 +112,7 @@ body {
     width: 100%;
     display: flex;
     overflow-x: auto;
-    padding: 10px 16px;
+    padding: 0 16px;
     background-color: white;
     z-index: 3;
     margin: 0;
@@ -235,7 +235,6 @@ body {
     background-image: url('/images/opening2.svg');
     margin-left: 16px;
 }
-
 .opening3-icon {
     background-image: url('/images/opening3.svg');
     margin-left: 16px;

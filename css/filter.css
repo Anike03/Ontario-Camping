@@ -105,6 +105,7 @@ body {
 
 
 /* Filter Container */
+
 .filter-container {
     position: absolute;
     top: 88.69px;
@@ -196,12 +197,6 @@ body {
     background-color: #f4f4f4;
 }
 
-.filter-option.active {
-    background-color: #074535;
-    color: white;
-    border-color: #074535;
-}
-
 .filter-footer {
     display: flex;
     justify-content: space-between;
@@ -229,24 +224,11 @@ body {
     color: white;
     font-weight: 700;
 }
-
-/* .back-button {
-    background-color: #fff;
-    border: 1px solid #074535;
-    font-weight: 400;
-} */
-
-/* .apply-button {
+.filter-option.selected {
     background-color: #074535;
     color: white;
-    font-weight: 700;
-} */
-
-/* .back-button:hover {
-    background-color: #074535;
-    color: white;
-    font-weight: 700;
-} */
+    border-color: #074535;
+}
 
 button:hover {
     background-color: #fff;

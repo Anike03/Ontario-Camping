@@ -19,14 +19,18 @@
                     onclick="document.querySelector('.explore').classList.add('expand'); setTimeout(function(){ window.location.href='filter.html'; }, 500);">
                 </button>
             </div>
-            <div class="filters">
-                <div class="filter-chip">Virtual Walk</div>
-                <div class="filter-chip">Photos</div>
-                <div class="filter-chip">Budget Friendly</div>
+            
+            <div class="filters" id="active-filters">
             </div>
             
             <div class="park-list" id="park-results">
-                <div class="park-card" data-name="Algonquin Park" data-location="Ontario, Canada">
+                <div class="park-card" data-name="Algonquin Park" data-location="Ontario, Canada" 
+                    data-trip="Weekend,Family Friendly" 
+                    data-scenery="Lakefront,Forest" 
+                    data-activities="Hiking,Fishing" 
+                    data-amenities="Showers,Fire Pits" 
+                    data-budget="Budget Friendly" 
+                    data-media="Virtual walk,Photos">
                     <div class="park-image" style="background-image: url('images/algonquin.svg');">
                         <div class="park-info">
                             <div class="park-name">Algonquin Park</div>
@@ -42,7 +46,13 @@
                     <button class="book-now">Book Now</button>
                 </div>
 
-                <div class="park-card" data-name="Banff Park" data-location="Alberta, Canada">
+                <div class="park-card" data-name="Banff Park" data-location="Alberta, Canada" 
+                    data-trip="Solo" 
+                    data-scenery="Mountain View" 
+                    data-activities="Hiking,Swimming" 
+                    data-amenities="Toilets,Fire Pits" 
+                    data-budget="Free sites" 
+                    data-media="Photos,Videos">
                     <div class="park-image" style="background-image: url('images/banff.svg');">
                         <div class="park-info">
                             <div class="park-name">Banff Park</div>
@@ -57,8 +67,14 @@
                     </div>
                 </div>
                 
-                <div class="park-card" data-name="Banff Park" data-location="Alberta, Canada">
-                    <div class="park-image" style="background-image: url('images/bon-echo.png–––');">
+                <div class="park-card" data-name="Bon Echo Park" data-location="Ontario, Canada" 
+                    data-trip="Weekend,Family Friendly" 
+                    data-scenery="Lakefront" 
+                    data-activities="Swimming,Fishing" 
+                    data-amenities="Showers,Toilets" 
+                    data-budget="Budget Friendly" 
+                    data-media="Virtual walk">
+                    <div class="park-image" style="background-image: url('images/bon-echo.png');">
                         <div class="park-info">
                             <div class="park-name">Bon Echo Park</div>
                             <div class="park-location">Ontario, Canada</div>
@@ -72,7 +88,13 @@
                     </div>
                 </div>
 
-                <div class="park-card" data-name="Jasper Park" data-location="Alberta, Canada">
+                <div class="park-card" data-name="Jasper Park" data-location="Alberta, Canada" 
+                    data-trip="Solo" 
+                    data-scenery="Mountain View,Forest" 
+                    data-activities="Hiking" 
+                    data-amenities="Fire Pits" 
+                    data-budget="Free sites" 
+                    data-media="Videos">
                     <div class="park-image" style="background-image: url('images/jasper.svg');">
                         <div class="park-info">
                             <div class="park-name">Jasper Park</div>
@@ -87,7 +109,13 @@
                     </div>
                 </div>
 
-                <div class="park-card" data-name="Killarney Park" data-location="Ontario, Canada">
+                <div class="park-card" data-name="Killarney Park" data-location="Ontario, Canada" 
+                    data-trip="Weekend" 
+                    data-scenery="Lakefront,Forest" 
+                    data-activities="Hiking,Swimming" 
+                    data-amenities="Showers,Toilets,Fire Pits" 
+                    data-budget="Budget Friendly" 
+                    data-media="Photos,Videos">
                     <div class="park-image" style="background-image: url('images/killarney.svg');">
                         <div class="park-info">
                             <div class="park-name">Killarney Park</div>
@@ -123,26 +151,6 @@
     </div>
     
     <script src="js/home.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('park-search');
-            const parkCards = document.querySelectorAll('.park-card');
-            
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                
-                parkCards.forEach(card => {
-                    const name = card.getAttribute('data-name').toLowerCase();
-                    const location = card.getAttribute('data-location').toLowerCase();
-                    
-                    if (name.includes(searchTerm) || location.includes(searchTerm)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="js/explore.js"></script>
 </body>
 </html>

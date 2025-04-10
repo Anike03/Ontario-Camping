@@ -226,6 +226,10 @@ button:hover {
     margin-left: 16px;
 }
 
+.opening3-icon {
+    background-image: url('/images/opening3.svg');
+    margin-left: 16px;
+}
 
 .book-now {
     margin: 0 0 20px 18px;
