@@ -41,29 +41,19 @@ body {
 /* Background Image */
 .home-bg {
     position: absolute;
-    width: 100%;
+    width: 375px;
     height: 392px;
-    /* background-image: url('/images/banff-info.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
-}
-button {
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-/* Hover effect */
-button:hover {
-    transform: scale(1.05);
 }
 
 /* Main Content Area */
 .explore {
     position: absolute;
-    top: 333px; /* Starting point */
+    top: 347px; /* Starting point */
     width: 100%;
-    height: calc(100% - 333px - 100px);
+    height: calc(100% - 345px - 100px);
     background-color: #FFF;
     border-radius: 40px 40px 0 0;
     box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.10);
@@ -74,24 +64,6 @@ button:hover {
     -ms-overflow-style: none;
 }
 
-
-/* Popular places */
-.popular {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 343px;
-    margin: 20px 0 0 16px;
-    padding: 0;
-}
-
-.popular h2 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: #484848;
-    margin: 0; /* Remove default h2 margin */
-}
 
 .view {
     display: flex;
@@ -231,21 +203,6 @@ button:hover {
     margin-left: 16px;
 }
 
-.book-now {
-    margin: 0 0 20px 18px;
-    padding: 10.5px 108.5px;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    background: var(--Primary, #074535);
-    font-family: "Quicksand", sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    cursor: pointer;
-}
-
 /* Navigation Bar */
 .nav-bar {
     position: absolute;
@@ -295,11 +252,11 @@ button:hover {
 }
 
 .nav-item:nth-child(1)::before {
-    background-image: url('/images/home2.svg');
+    background-image: url('/images/home1.svg');
 }
 
 .nav-item:nth-child(2)::before {
-    background-image: url('/images/explore1.svg');
+    background-image: url('/images/explore2.svg');
 }
 
 .nav-item:nth-child(3)::before {
@@ -342,7 +299,7 @@ button:hover {
 
 .park-location {
     font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     color: #777;
     margin-bottom: 16px;
     display: flex;
@@ -399,30 +356,31 @@ button:hover {
     margin: 24px 0 16px 0;
 }
 
-.map-button, .check-weather {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 16px;
+.map-button, .check-weather, .book-now-bottom {
     display: flex;
-    align-items: center;
+    width: 162px;
+    height: 44px;
+    padding: 16px 50px;
     justify-content: center;
-    gap: 8px;
-}
-
-.map-button {
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
     background-color: #074535;
     color: white;
-    border: none;
+    font-weight: 700;
 }
 
-.check-weather {
-    background-color: white;
-    color: #074535;
-    border: 2px solid #074535;
+
+button:hover {
+    background-color: #fff;
+    border: 1px solid #074535;
+    font-weight: 400;
+    color: #000;
 }
 
 .reviews {
@@ -449,19 +407,6 @@ button:hover {
     font-size: 12px;
     color: #777;
     font-style: italic;
-}
-
-.book-now-bottom {
-    width: 100%;
-    padding: 16px;
-    background-color: #074535;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    margin: 24px 0;
 }
 
 /* Image gallery styles */
@@ -508,4 +453,78 @@ button:hover {
 /* Hide scrollbar but keep functionality */
 .image-gallery::-webkit-scrollbar {
     display: none;
+}
+
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    width: 44px;
+    height: 44px;
+    background-image: url('/images/back-button.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* Park Map */
+.park-map {
+    width: 343px;
+    height: 234px;
+    background-image: url('/images/banff-map.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    margin: 20px 0;
+}
+
+/* Price Info */
+.price-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.price {
+    color: #484848;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.price-label {
+    color: #484848;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.price-location {
+    color: #484848;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Update button styles */
+.check-weather, .book-now-bottom {
+    display: flex;
+    width: 161px;
+    height: 44px;
+    padding: 16px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
 }
