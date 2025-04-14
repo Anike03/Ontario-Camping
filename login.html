@@ -4,11 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Ontario Outing</title>
-    <link rel="stylesheet" href="styles/login.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <style>
+      .status-bar {
+        width: 100%;
+        height: 35px;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        z-index: 10;
+        position: absolute;
+        top: 0;
+      }
+
+      #status-time {
+        font-weight: bold;
+      }
+
+      .status-icons {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+
+      .icon {
+        display: inline-block;
+        height: 14px;
+      }
+      .battery {
+        width: 24px;
+        height: 24px;
+      }
+
+      .signal {
+        height: 20px;
+      }
+      .wifi {
+        width: 24px;
+        height: 36px;
+      }
+
+      .login-container {
+        position: relative;
+        padding-top: 35px; /* push content below status bar */
+      }
+    </style>
   </head>
   <body>
     <div class="login-container">
-      <div class="tagline">Plan Less, <br />Camp More...</div>
+      <!-- ✅ Status Bar -->
+      <div class="status-bar">
+        <div id="status-time">9:41</div>
+        <div class="status-icons">
+          <!-- Signal -->
+          <svg class="icon signal" viewBox="0 0 24 24" fill="white">
+            <path d="M2 22h2v-4H2v4zm4 0h2v-7H6v7zm4 0h2v-10h-2v10zm4 0h2v-13h-2v13zm4 0h2V5h-2v17z" />
+          </svg>
+
+          <!-- Wi-Fi -->
+          <svg class="icon wifi" viewBox="0 0 24 24" fill="white">
+            <path
+              d="M12 18c.552 0 1-.449 1-1s-.448-1-1-1-1 .449-1 1 .448 1 1 1zm-4.243-2.829a6.977 6.977 0 0 1 8.486 0l1.414-1.414a8.978 8.978 0 0 0-11.314 0l1.414 1.414zm-2.829-2.828a10.963 10.963 0 0 1 14.142 0l1.414-1.414a12.963 12.963 0 0 0-16.97 0l1.414 1.414z"
+            />
+          </svg>
+
+          <!-- Battery -->
+          <svg class="icon battery" viewBox="0 0 24 24" fill="white">
+            <rect x="2" y="7" width="18" height="10" rx="2" ry="2" stroke="white" fill="none" stroke-width="2" />
+            <rect x="20" y="10" width="2" height="4" rx="1" fill="white" />
+            <rect x="4" y="9" width="12" height="6" fill="white" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <div class="tagline">Plan Less</div>
+      <div class="tagline2">Camp More...</div>
+
       <!-- Background Image Section -->
       <div class="hero-section"></div>
 
@@ -34,7 +111,9 @@
           <input type="password" class="input-field" />
         </div>
 
-        <button class="login-button">Login</button>
+        <button class="login-button" onclick="window.location.href='home.html'">
+          Login
+        </button>
 
         <div class="signup-link">
           Don't have an account? <a href="signup.html">Create an account</a>
@@ -60,6 +139,7 @@
         </div>
       </div>
     </div>
-    <script src="script/login.js"></script>
+
+    <script src="js/login.js"></script>
   </body>
 </html>
